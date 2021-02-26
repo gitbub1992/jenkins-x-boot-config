@@ -15,6 +15,10 @@ chartmuseum:
 {{- if and (hasKey .Requirements "repository") (eq .Requirements.repository "bucketrepo") }}
   enabled: false
 {{- else }}
+  persistence:
+    pv:
+      capacity:
+        storage: 15Gi
   env:
     secret:
       BASIC_AUTH_USER: "{{ .Parameters.adminUser.username }}"
@@ -25,6 +29,8 @@ nexus:
   defaultAdminPassword: "{{ .Parameters.adminUser.password }}"
 {{- if hasKey .Requirements "repository"}}
 {{- if or (eq .Requirements.repository "nexus") (eq .Requirements.repository "") }}
+  persistence:
+    storageSize: 15Gi
   enabled: true
 {{- else }}
   enabled: false

@@ -11,3 +11,11 @@ tekton:
 dex:
   certs:
     newApi: true
+chartmuseum:
+  persistence:
+    pv:
+      capacity:
+        storage: 15Gi
+nexus:
+  persistence:
+    storageSize: 15Gi
