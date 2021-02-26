@@ -45,7 +45,7 @@ environments:
   repository: environment-jenkins-x-test-keep-production
 gitops: true
 ingress:
-  domain: ""
+  domain: 43.128.0.90.nip.io
   externalDNS: false
   namespaceSubDomain: -jx.
   tls:
