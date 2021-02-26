@@ -12,13 +12,13 @@ cleanup:
   enabled: false
 
 chartmuseum:
+  persistence:
+    storageClass: cbs
+    enabled: true
+    size: 15Gi
 {{- if and (hasKey .Requirements "repository") (eq .Requirements.repository "bucketrepo") }}
   enabled: false
 {{- else }}
-  persistence:
-    pv:
-      capacity:
-        storage: 15Gi
   env:
     secret:
       BASIC_AUTH_USER: "{{ .Parameters.adminUser.username }}"
@@ -26,11 +26,13 @@ chartmuseum:
 {{- end }}
 
 nexus:
+  persistence:
+    enabled: true
+    storageClass: cbs
+    storageSize: 15Gi
   defaultAdminPassword: "{{ .Parameters.adminUser.password }}"
 {{- if hasKey .Requirements "repository"}}
 {{- if or (eq .Requirements.repository "nexus") (eq .Requirements.repository "") }}
-  persistence:
-    storageSize: 15Gi
   enabled: true
 {{- else }}
   enabled: false

@@ -1,10 +1,10 @@
 adminUser:
-  password: local:jenkins-x-test-keep/adminUser:password
+  password: admin
   username: admin
 enableDocker: true
 pipelineUser:
   email: ivycx1992@gmail.com
   token: local:jenkins-x-test-keep/pipelineUser:token
-  username: evin
+  username: evincai
 prow:
   hmacToken: local:jenkins-x-test-keep/prow:hmacToken

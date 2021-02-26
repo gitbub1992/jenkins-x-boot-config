@@ -6,7 +6,7 @@ cluster:
   clusterName: jenkins-x-test-keep
   devEnvApprovers:
   - "y"
-  environmentGitOwner: evin
+  environmentGitOwner: gitbub1992
   gitKind: github
   gitName: github
   gitServer: https://github.com
