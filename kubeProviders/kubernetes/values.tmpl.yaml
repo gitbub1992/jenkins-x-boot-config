@@ -14,3 +14,21 @@ jenkins-x-platform:
         }
       }
 {{- end}}
+
+
+chartmuseum:
+  persistence:
+    size: 22Gi
+jenkins:
+  Persistence:
+    Size: 20Gi
+monocular:
+  mongodb:
+    persistence:
+      size: 20Gi
+nexus:
+  persistence:
+    size: 21Gi
+tekton:
+  pvc:
+    size: 20Gi
